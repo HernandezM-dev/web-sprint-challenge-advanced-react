@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {useForm} from '../hooks/useForm'
+// import {useDarkMode} from '../hooks/useDarkMode'
 
 const initialValue = {
   firstName: "",
@@ -16,6 +17,8 @@ const initialValue = {
 
 const CheckoutForm = (props) => {
   const [showSuccessMessage, values, handleChanges, handleSubmit] = useForm(initialValue)
+  // const [darkMode, setDarkMode] = useDarkMode();
+  // let item = null;
   // const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   // const [values, setValues] = useState(initialValue);
 
@@ -28,9 +31,27 @@ const CheckoutForm = (props) => {
   //   setShowSuccessMessage(true);
   // };
 
+//   const [storedValue, setStoredValue] = useState(() => {
+//     const item = window.localStorage.getItem('enabled');
+//     console.log(item)
+//     return item.value
+//  })
+
+// useEffect(()=>{
+//    item = darkMode;
+// },[darkMode])
+// const [storedValue, setStoredValue] = useState(false)
+
+
+  // const setValue = value => {
+  //   setStoredValue(value);
+  //   window.localStorage.setItem(key, JSON.stringify(value));
+  // };
+
+
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className={"form"} onSubmit={handleSubmit}>
         <h2>Checkout Form</h2>
         <label>
           First Name:

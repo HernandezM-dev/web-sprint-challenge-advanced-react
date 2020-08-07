@@ -18,8 +18,6 @@ test("form shows success message on submit with form details", () => {
     const stateInput = screen.getByLabelText(/State:/i)
     const zipInput = screen.getByLabelText(/Zip:/i)
 
-    
-    // await act(async () =>{
     fireEvent.change(firstNameInput, {target: {value: 'Michael'}})
     fireEvent.change(lastNameInput, {target: {value: 'Hernandez'}})
     fireEvent.change(addressInput, {target: {value: '1234 Hello St'}})
@@ -31,8 +29,6 @@ test("form shows success message on submit with form details", () => {
 
     const submitbtn = screen.getByRole('button', {name: /Checkout/i})
     fireEvent.click(submitbtn)
-
-    // })
 
     expect(screen.getByText(/Michael/i)).toBeInTheDocument
 screen.debug()
